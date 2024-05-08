@@ -75,14 +75,15 @@ export const TelegramProvider = ({
   const value = useMemo(() => {
     return webApp
       ? {
-          webApp,
-          unsafeData: webApp.initDataUnsafe,
-          user: webApp.initDataUnsafe.user,
-        }
+        webApp,
+        unsafeData: webApp.initDataUnsafe,
+        user: webApp.initDataUnsafe.user,
+      }
       : {};
   }, [webApp]);
   return (
     <TelegramContext.Provider value={value}>
+      <script src='https://telegram.org/js/telegram-web-app.js'></script>
       {/* Make sure to include script tag with "beforeInteractive" strategy to pre-load web-app script */}
       {children}
     </TelegramContext.Provider>
@@ -115,7 +116,6 @@ function App() {
 const WithTelegramProvider = () => {
   return (
     <TelegramProvider>
-      <script src='https://telegram.org/js/telegram-web-app.js'></script>
       <App />
     </TelegramProvider>
   );
