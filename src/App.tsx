@@ -107,7 +107,7 @@ function App() {
           <pre>{JSON.stringify(webApp, null, 2)}</pre>
         </div>
       ) : (
-        <div>Make sure web app is opened from telegram client</div>
+        <div>Make sure web app isrr opened from telegram client</div>
       )}
     </div>
   );
