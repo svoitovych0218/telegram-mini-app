@@ -115,6 +115,7 @@ function App() {
 const WithTelegramProvider = () => {
   return (
     <TelegramProvider>
+      <script src='https://telegram.org/js/telegram-web-app.js'></script>
       <App />
     </TelegramProvider>
   );
