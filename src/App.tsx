@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { List } from './Components/List';
-import 'telegram-web-app'
 // import logo from './logo.svg';
 
 export interface ITelegramContext {
