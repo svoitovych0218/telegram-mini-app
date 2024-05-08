@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 // import logo from './logo.svg';
-import './App.css';
 
 export interface ITelegramUser {
   id: number;
@@ -83,7 +82,6 @@ export const TelegramProvider = ({
   }, [webApp]);
   return (
     <TelegramContext.Provider value={value}>
-      <script src='https://telegram.org/js/telegram-web-app.js'></script>
       {/* Make sure to include script tag with "beforeInteractive" strategy to pre-load web-app script */}
       {children}
     </TelegramContext.Provider>
