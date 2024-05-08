@@ -97,7 +97,7 @@ function App() {
   return (
     <div>
       {user ? (
-        <div>
+        <div style={{backgroundColor:'white'}}>
           <h1>Welcome {user?.username}</h1>
           User data:
           <pre>{JSON.stringify(user, null, 2)}</pre>
