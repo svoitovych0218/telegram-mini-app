@@ -22,7 +22,7 @@ export const TelegramProvider = ({
   useEffect(() => {
     const app = (window as any).Telegram?.WebApp;
     if (app) {
-      (app as WebApp).themeParams.bg_color='white';
+      (app as WebApp).themeParams.bg_color='#ffffff';
       app.ready();
       setWebApp(app);
     }
@@ -68,7 +68,7 @@ function App() {
         <div>Make sure web app is opened from telegram client</div>
       )} */}
       {user ? (
-        <div style={{backgroundColor: 'white'}}>
+        <div>
           <Header />
           <Routes>
             <Route index element={<GamesList />} />
