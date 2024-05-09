@@ -23,7 +23,7 @@ export const TelegramProvider = ({
     const app = (window as any).Telegram?.WebApp;
     if (app) {
       app.ready();
-      (app as WebApp).themeParams.bg_color='#ffffff';
+      (app as WebApp).themeParams.bg_color = '#ffffff';
       setWebApp(app);
     }
   }, []);
@@ -47,9 +47,41 @@ export const TelegramProvider = ({
 
 export const useTelegram = () => useContext(TelegramContext);
 
+export interface IPlayer {
+  id: number,
+  player1: string,
+  wins: number;
+}
+
+const games: IPlayer[] = [{
+  id: 1,
+  player1: 'Player1',
+  wins: 2
+},
+{
+  id: 2,
+  player1: 'Player2',
+  wins: 3
+},
+{
+  id: 3,
+  player1: 'Player3',
+  wins: 7
+},
+{
+  id: 4,
+  player1: 'Player4',
+  wins: 1
+},
+{
+  id: 5,
+  player1: 'Player5',
+  wins: 5
+}]
 
 function App() {
   const { user, webApp } = useTelegram();
+  const [selectedPlayer, setSelectedPlayer] = useState<IPlayer | undefined>(undefined);
   useEffect(() => {
     webApp?.MainButton.show();
   }, [webApp?.MainButton])
@@ -71,8 +103,8 @@ function App() {
         <div>
           <Header />
           <Routes>
-            <Route index element={<GamesList />} />
-            <Route path={'bet'} element={<Bet />} />
+            <Route index element={<GamesList players={games} selected={selectedPlayer} setSelected={(player) => setSelectedPlayer(player)} />} />
+            <Route path={'bet'} element={<Bet player={selectedPlayer!} />} />
           </Routes>
         </div>) : (<div>Make sure web app is opened from telegram client</div>)}
 
