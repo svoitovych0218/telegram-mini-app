@@ -65,10 +65,11 @@ function App() {
       ) : (
         <div>Make sure web app is opened from telegram client</div>
       )} */}
-      {user && <Routes>
+      {user ? (<Routes>
         <Route index element={<GamesList />} />
         <Route path={'bet'} element={<Bet />} />
-      </Routes>}
+      </Routes>) : (<div>Make sure web app is opened from telegram client</div>)}
+
     </div>
   );
 }
