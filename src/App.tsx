@@ -22,8 +22,8 @@ export const TelegramProvider = ({
   useEffect(() => {
     const app = (window as any).Telegram?.WebApp;
     if (app) {
-      (app as WebApp).themeParams.bg_color='#ffffff';
       app.ready();
+      (app as WebApp).themeParams.bg_color='#ffffff';
       setWebApp(app);
     }
   }, []);
