@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import { GamesList } from './Pages/GamesList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Bet } from './Pages/Bet';
+import { Header } from './Components/Header';
 // import logo from './logo.svg';
 
 export interface ITelegramContext {
@@ -66,10 +67,13 @@ function App() {
         <div>Make sure web app is opened from telegram client</div>
       )} */}
       {user ? (
-        <Routes>
-          <Route index element={<GamesList />} />
-          <Route path={'bet'} element={<Bet />} />
-        </Routes>) : (<div>Make sure web app is opened from telegram client</div>)}
+        <>
+          <Header />
+          <Routes>
+            <Route index element={<GamesList />} />
+            <Route path={'bet'} element={<Bet />} />
+          </Routes>
+        </>) : (<div>Make sure web app is opened from telegram client</div>)}
 
     </div>
   );
