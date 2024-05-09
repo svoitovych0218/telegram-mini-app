@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import { useTelegram } from "../App";
 
 export const Header = () => {
+    const { webApp } = useTelegram();
     return (
         <div style={{ display: 'flex', width: '100%' }}>
-            <div> <Link to={'/bet'} >Bet</Link> </div>
-            <div> <Link to={'/'} >Players</Link> </div>
+            <div> <Link style={{ color: webApp?.themeParams.text_color }} to={'/bet'} >Bet</Link> </div>
+            <div> <Link style={{ color: webApp?.themeParams.text_color }} to={'/'} >Players</Link> </div>
         </div>
     )
 }
