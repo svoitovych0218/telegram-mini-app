@@ -7,7 +7,7 @@ export const Bet = ({ player }: { player: IPlayer }) => {
 
     const mainButtonClickedHandler = useCallback(() => {
         console.log('send data');
-        webApp?.sendData(`/bet ${player.id} ${amount}`);
+        webApp?.sendData()
     }, [webApp, amount, player.id])
 
     useEffect(() => {
