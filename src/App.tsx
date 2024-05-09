@@ -68,13 +68,13 @@ function App() {
         <div>Make sure web app is opened from telegram client</div>
       )} */}
       {user ? (
-        <>
+        <div style={{backgroundColor: 'white'}}>
           <Header />
           <Routes>
             <Route index element={<GamesList />} />
             <Route path={'bet'} element={<Bet />} />
           </Routes>
-        </>) : (<div>Make sure web app is opened from telegram client</div>)}
+        </div>) : (<div>Make sure web app is opened from telegram client</div>)}
 
     </div>
   );
