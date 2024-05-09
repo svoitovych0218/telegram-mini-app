@@ -20,7 +20,7 @@ export const Bet = ({ player }: { player: IPlayer }) => {
 
         webApp?.onEvent('mainButtonClicked', mainButtonClickedHandler);
 
-        return webApp?.offEvent('mainButtonClicked', mainButtonClickedHandler);
+        return () => webApp?.offEvent('mainButtonClicked', mainButtonClickedHandler);
     }, [amount, player.player1, webApp?.MainButton, mainButtonClickedHandler, webApp])
     return (
         <>
