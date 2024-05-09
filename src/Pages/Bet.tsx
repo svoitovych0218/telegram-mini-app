@@ -6,6 +6,7 @@ export const Bet = ({ player }: { player: IPlayer }) => {
     const { webApp } = useTelegram();
 
     const mainButtonClickedHandler = useCallback(() => {
+        console.log('send data');
         webApp?.sendData(`/bet ${player.id} ${amount}`);
     }, [webApp, amount, player.id])
 
