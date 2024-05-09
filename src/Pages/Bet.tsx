@@ -11,6 +11,7 @@ export const Bet = ({ player }: { player: IPlayer }) => {
     }, [webApp, amount, player.id])
 
     useEffect(() => {
+        console.log('use effect')
         if (!amount || amount === 0) {
             webApp?.MainButton.disable();
         } else {
