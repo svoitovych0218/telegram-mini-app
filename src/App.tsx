@@ -86,7 +86,7 @@ function App() {
     webApp?.MainButton.show();
   }, [webApp?.MainButton])
   return (
-    <div>
+    <div style={{color: webApp?.themeParams.text_color}}>
       {/* {user ? (
         <div style={{backgroundColor:'white'}}>
           <h1>Welcome {user?.username}</h1>
