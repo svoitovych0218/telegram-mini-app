@@ -1,4 +1,4 @@
-import { DispatchWithoutAction, FC, useRef, useState } from 'react';
+import { DispatchWithoutAction, FC, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   // useThemeParams,
@@ -768,7 +768,10 @@ const DemoApp: FC<{
   }
 
   // Start the game
-  startGame();
+
+  useEffect(() => {
+    startGame();
+  });
 
   return (
     <>
