@@ -76,3 +76,27 @@ code {
     transform: rotate(360deg);
   }
 }
+
+
+canvas {
+  border: 1px solid black;
+  background-color: black;
+}
+#marketplace {
+display: none;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+padding: 20px;
+border: 1px solid black;
+width: 90%;
+max-width: 400px;
+box-sizing: border-box;
+}
+#marketplace button {
+font-size: 18px; /* Increase button font size */
+padding: 10px; /* Increase button padding */
+margin: 5px 0; /* Add margin for better spacing */
+}
