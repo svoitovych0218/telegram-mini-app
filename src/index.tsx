@@ -1,4 +1,4 @@
-import React, { DispatchWithoutAction, FC, useState } from 'react';
+import React, { DispatchWithoutAction, FC, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   useThemeParams,
@@ -17,6 +17,7 @@ import HapticFeedbackDemo from './HapticFeedbackDemo';
 import ScanQrPopupDemo from './ScanQrPopupDemo';
 import ExpandDemo from './ExpandDemo';
 import useBetaVersion from './useBetaVersion';
+import { useWebApp } from '@vkruglikov/react-telegram-web-app/lib/core';
 
 const DemoApp: FC<{
   onChangeTransition: DispatchWithoutAction;
@@ -24,6 +25,17 @@ const DemoApp: FC<{
   const [colorScheme, themeParams] = useThemeParams();
   const [isBetaVersion, handleRequestBeta] = useBetaVersion(false);
   const [activeBtn, setActiveBtn] = useState(true);
+  const webApp = useWebApp();
+
+  const[userId, setUserId] = useState<string>('');
+
+  useEffect(()=>{
+    if (!webApp) return;
+    console.log(webApp.initData);
+    console.log(webApp.initDataUnsafe.user);
+
+    setUserId(JSON.stringify(webApp.initDataUnsafe.user));
+  },[webApp])
 
   return (
     <div>
@@ -52,6 +64,9 @@ const DemoApp: FC<{
             alt="logo"
           />
         </header>
+        <div>
+          {userId}
+        </div>
         <div className="contentWrapper">
           {isBetaVersion && (
             <div className="betaVersion">
