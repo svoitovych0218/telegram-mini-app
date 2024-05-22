@@ -27,7 +27,7 @@ const DemoApp: FC<{
   const [activeBtn, setActiveBtn] = useState(true);
   const webApp = useWebApp();
 
-  const[userId, setUserId] = useState<string>('');
+  const[userId, setUserId] = useState<string>('none');
 
   useEffect(()=>{
     if (!webApp) return;
