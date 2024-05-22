@@ -17,7 +17,7 @@ import HapticFeedbackDemo from './HapticFeedbackDemo';
 import ScanQrPopupDemo from './ScanQrPopupDemo';
 import ExpandDemo from './ExpandDemo';
 import useBetaVersion from './useBetaVersion';
-import { useWebApp } from '@vkruglikov/react-telegram-web-app/lib/core';
+import useWebApp from '@vkruglikov/react-telegram-web-app/lib/core/useWebApp';
 
 const DemoApp: FC<{
   onChangeTransition: DispatchWithoutAction;
